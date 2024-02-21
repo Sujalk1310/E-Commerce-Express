@@ -1,0 +1,42 @@
+{{>opener}}
+{{>navbar}}
+<div class="main">
+    {{#if product}}
+    <div class="intro">
+        <p class="headline">Edit Item</p>
+        <p class="slogan">Please update the form</p>
+    </div>  
+    <form class="form-inp" method="post" action="/edit/">
+        <input type="hidden" name="productId" value="{{product.productId}}" required>
+        <span class="input-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" placeholder="Enter Product Name" value="{{product.name}}" required>
+        </span>
+        <span class="input-group">
+            <label for="imgUrl">Image URL:</label>
+            <input type="url" id="imgUrl" name="imgUrl" placeholder="Enter Product Image URL" value="{{product.imgUrl}}" required>
+        </span>
+        <span class="input-span">
+            <span class="input-group">
+                <label for="price">Price:</label>
+                <input type="text" id="price" name="price" placeholder="Enter Product Price" value="{{product.price}}" required>
+            </span>
+            <button type="submit">
+                <lord-icon
+                    src="https://cdn.lordicon.com/wwmtsdzm.json"
+                    trigger="hover"
+                    stroke="bold"
+                    style="width:60px;height:60px">
+                </lord-icon>
+            </button>
+        </span>
+    </form>
+    {{else}}
+        <div class="intro">
+            <p class="headline">Error 404</p>
+            <p class="slogan">No product selected!</p>
+        </div>  
+    {{/if}}
+</div>
+
+{{>closer}}

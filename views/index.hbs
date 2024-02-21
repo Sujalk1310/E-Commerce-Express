@@ -1,0 +1,67 @@
+{{>opener}}
+{{>navbar}}
+
+<div class="main">
+    <div class="intro">
+        <p class="headline">Welcome!</p>
+        <p class="slogan">To the #1 E-Commerce Website</p>
+    </div>  
+    <div id="bar">
+        <button id="add" title="Add Item" onclick="location.href='add/'">
+            <lord-icon
+                src="https://cdn.lordicon.com/zrkkrrpl.json"
+                trigger="hover"
+                stroke="bold"
+                state="hover-swirl"
+                style="width:60px;height:60px">
+            </lord-icon>
+        </button>
+        <div id="search-div">
+            <input type="text" id="search" placeholder="Search">
+            <lord-icon
+                id="search-icon"
+                src="https://cdn.lordicon.com/unukghxb.json"
+                trigger="hover"
+                stroke="bold"
+                style="width:60px;height:75px">
+            </lord-icon>
+        </div>
+    </div>
+    <div id="products">
+        {{#each products}}
+            <div class="card animate__animated animate__fadeInUp animate__slow">
+                <div class="placeholder-img">
+                    <img src="{{this.imgUrl}}" loading="lazy">
+                </div>
+                <h2>{{this.name}}</h2>
+                <p>{{this.price}}</p>
+                <hr>
+                <div class="action">
+                    <button class="edit" title="Edit Product" onclick="location.href='edit/{{this.productId}}/'">
+                        <lord-icon
+                            src="https://cdn.lordicon.com/wuvorxbv.json"
+                            trigger="hover"
+                            state="hover-line"
+                            stroke="bold"
+                            colors="primary: #ffffff, secondary: #e83a30"
+                            style="width: 40px; height: 40px">
+                        </lord-icon>
+                    </button>
+                    <button class="delete" title="Delete Product" onclick="location.href='delete/{{this.productId}}/'">
+                        <lord-icon
+                            src="https://cdn.lordicon.com/drxwpfop.json"
+                            trigger="hover"
+                            stroke="bold"
+                            state="hover-empty"
+                            colors="primary:#ffffff,secondary:#ffffff"
+                            style="width: 40px; height: 40px">
+                        </lord-icon>
+                    </button>
+                </div>
+            </div>
+        {{/each}}
+    </div>
+</div>
+
+{{>footer}}
+{{>closer}}
