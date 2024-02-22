@@ -23,8 +23,8 @@ router.get('/add/', (req, res) => {
 router.post('/add/', async (req, res) => {
     try {
         let {name, imgUrl, price} = req.body;
-        const newProduct = {productId: uuidv4(), name, imgUrl, price}
-        await Product.insertOne(newProduct);
+        const newProduct = {productId: uuidv4(), name, imgUrl, price};
+        await Product.create(newProduct);
         res.redirect('/');
     } catch (error) {
         console.log(error);

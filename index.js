@@ -14,10 +14,10 @@ hbs.registerPartials(__dirname + '/views/partials', (error) => { if(error) conso
 
 app.use(productRoutes);
 
-const password = encodeURIComponent("kinshu@123");
-const connectionString = `mongodb+srv://sujalk1310:${password}@ecommerce.gt3hv3f.mongodb.net/`;
+// const password = encodeURIComponent("kinshu@123");
+// const connectionString = `mongodb+srv://sujalk1310:${password}@ecommerce.gt3hv3f.mongodb.net/`;
 
-mongoose.connect(connectionString)
+mongoose.connect("mongodb://127.0.0.1:27017/ecommerce")
 .then((data, error) => {
     if (!error) {
         console.log("Connected to DB");
